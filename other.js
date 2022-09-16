@@ -1,48 +1,3 @@
-// const guests = [{nombre: 'Cheyenne', age: 23, value: true},{nombre: 'Imani', age: 23, value: true},{nombre: 'Chelo', age: 21, value: false},{nombre: 'Aritz', age: 25, value: true},{nombre: 'Zendo', age: 19, value: false},{nombre: 'Ilias', age: 27, value: true},{nombre: 'Aioros', age: 22, value: true},{nombre: 'Aitana', age: 21, value: false},{nombre: 'Ikaria', age: 29, value: true},{nombre: 'Kenya', age: 27, value: true},]
-
-// const edades = guests.map(function(x){
-//  return x['age'];
-// });
-// console.log(edades);
-
-// function order(a,b){
-//     return a - b;
-// }
-// console.log(edades.sort(order));
-
-// const findNames =  guests.map(function(x) {
-//     return x['nombre'];
-// })
-// console.log(findNames);
-
-// const sumaEdades = edades.reduce((x,y) => x + y, 0)
-// console.log(sumaEdades);
-
-// const longitud = guests.length;
-// const media =  sumaEdades / longitud;
-// console.log(media);
-
-// const enOrder = findNames.sort(function (a,b) {
-//  if (a > b) {
-//     return 1
-//  }
-//  if(a < b){
-//     return -1
-//  }
-//  return 0
-// })
-// console.table(enOrder);
-
-// const onlyFalse = guests.filter(x => x.value !== true)
-// console.table(onlyFalse);
-
-// const averNombres = guests.map(function(n) {
-//     return n.nombre;
-// });
-// console.log(averNombres);
-// const sacarElUltimo =  averNombres.slice()
-// console.log(sacarElUltimo);
-
 const guests = [
   { nombre: "Cheyenne", age: 23, value: true },
   { nombre: "Imani", age: 23, value: true },
@@ -85,25 +40,50 @@ function ruleToOrder(a, b) {
   return a - b;
 }
 const orderAll = console.log(allAges.sort(ruleToOrder));
+
+// Sum All the ages =>
 const sumAll = allAges.reduce((x, y) => x + y, 0);
 console.log(sumAll);
 
-// Get the average ages
+// Get the average ages =>
 const getMedia = sumAll / guests.length;
 console.log(getMedia);
 
-// Print all false values  person => 
-
-const allFalsePerson = guests.filter(x => x.value === false);
+// Print all false values person =>
+const allFalsePerson = guests.filter((x) => x.value === false);
 console.table(allFalsePerson);
- 
-// Print all true value person => 
 
-const allTruePerson = guests.filter( x => x.value === true);
+// Print all true value person =>
+const allTruePerson = guests.filter((x) => x.value === true);
 console.table(allTruePerson);
 
-// Print the youngest one => 
+// Print the youngest one =>
+let theCero = [];
+const theYounguest = allAges.find((x) => x > theCero);
+console.log(theYounguest);
 
-const theOldest = allAges.pop(-1)
+const min = allAges.reduce((a, b) => a);
+console.log(min);
+
+const mini = Math.min(...allAges);
+console.log(min);
+
+// Print the Oldest =>
+const theOldest = allAges.find((x) => x > 1);
 console.log(theOldest);
 
+const theOlder = allAges.reduce((a, b) => b);
+console.log(theOlder);
+
+const theViejo = Math.max(...allAges);
+console.log(theViejo);
+
+// __________________________________ADVANCE____________________________________
+
+// Get only the names in order at once =>
+const nombres = guests.flatMap(({ nombre }) => nombre).sort();
+console.table(nombres);
+
+// Get only the ages in ascendent order at once =>
+const edades = guests.flatMap(({ age }) => age).sort((a, b) => a - b);
+console.table(edades);
