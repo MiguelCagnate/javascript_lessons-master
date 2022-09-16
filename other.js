@@ -87,3 +87,4 @@ console.table(nombres);
 // Get only the ages in ascendent order at once =>
 const edades = guests.flatMap(({ age }) => age).sort((a, b) => a - b);
 console.table(edades);
+
