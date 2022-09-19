@@ -88,3 +88,17 @@ console.table(nombres);
 const edades = guests.flatMap(({ age }) => age).sort((a, b) => a - b);
 console.table(edades);
 
+
+
+///_____
+
+const productos = [
+  { id: "asgadgadrgadrg", nombre: "Camiseta", precio: 500 },
+  { id: "trsgdfyhrtfjrtyi", nombre: "Zapatos", precio: 2000 },
+  { id: "ouiopgbgdfjdf", nombre: "Pantalones", precio: 1500 },
+];
+
+const proConDEscuento = productos.filter(({precio}) => precio > 1000) 
+const barato = producto => producto.precio < 1000
+const productosBaratos = productos.filter(barato)
+console.log(JSON.stringify(productosBaratos));
