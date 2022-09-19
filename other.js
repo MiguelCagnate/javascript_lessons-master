@@ -88,3 +88,55 @@ console.table(nombres);
 const edades = guests.flatMap(({ age }) => age).sort((a, b) => a - b);
 console.table(edades);
 
+const tuList = [
+  "Papaya",
+  "Mango",
+  "Corozo",
+  "Nispero",
+  "Zapote",
+  "Lapicero",
+  "Mogolla",
+];
+const miList = [
+  "Piña",
+  "Mango",
+  "Guanabana",
+  "Lulo",
+  "Mora",
+  "Lapicero",
+  "Mogolla",
+];
+
+// const iguales = miList.filter(x => x ===  tuList.indexOf[x]);
+// console.log(iguales);
+
+const iguales = [];
+const distintos = [];
+
+function findIguales() {
+  for (let x = 0; x < tuList.length; x++) {
+    if (miList.indexOf(tuList[x]) === -1) {
+      distintos.push(tuList[x]);
+    }
+  }
+  for (let x = 0; x < miList.length; x++) {
+    if (tuList.indexOf(miList[x]) === -1) {
+      distintos.push(miList[x]);
+    }
+  }
+  for (let x = 0; x < tuList.length; x++) {
+    if (miList.indexOf(tuList[x]) !== -1) {
+      iguales.push(tuList[x]);
+    }
+  }
+  return `${iguales} //\n ${distintos}`
+}
+
+console.table(findIguales(tuList, miList)); 
+let sameP = [];
+let othersP = [];
+
+let getTheSames = tuList.filter(x => miList.includes(x));othersP.push(getTheSames) 
+console.table(getTheSames);
+let getTheOthers = tuList.filter(x => !miList.includes(x));sameP.push(getTheOthers);  
+console.table(getTheOthers);
