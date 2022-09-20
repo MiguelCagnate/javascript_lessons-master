@@ -12,7 +12,7 @@ const guests = [
 ];
 
 // Get all Names only =>
-const allNames = guests.map(({ nombre }) => nombre);
+const allNames = guests.map(({ nombre }) => nombre).sort();
 console.log(allNames);
 
 //Order all Names =>
@@ -59,7 +59,7 @@ console.table(allTruePerson);
 
 // Print the youngest one =>
 let theCero = [];
-const theYounguest = allAges.find((x) => x > theCero);
+const theYounguest = allAges.find((x) => x === theCero);
 console.log(theYounguest);
 
 const min = allAges.reduce((a, b) => a);
@@ -142,4 +142,7 @@ let getTheOthers = tuList.filter(x => !miList.includes(x));sameP.push(getTheOthe
 console.table(getTheOthers);
 
 
-
+let elMaspeque = guests.map(({age}) => age).sort((a,b) => a - b).shift();console.log(elMaspeque);
+let elMasgrande = guests.map(({age}) => age).sort((a,b) => a - b).pop(); console.log(elMasgrande);
+let laMeraSuma = guests.map(({age}) => age).reduce((x,y) => x + y, 0); console.log(laMeraSuma);
+let laPropiaMedia = (laMeraSuma / guests.length); console.log(laPropiaMedia.toFixed());
