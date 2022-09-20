@@ -41,3 +41,7 @@ let getAllTrue =  cars.filter(({value}) => value !== false); console.log(getAllT
 // Get only false =>
 let allFalse = cars.filter((x) => x.value === false); console.log(allFalse);
 
+let values = cars.map(({value}) => value).filter(x => x === true); 
+console.log(values);
+let allFalsos = cars.map(({value}) => value).filter(x => x !== true);
+console.log(allFalsos);

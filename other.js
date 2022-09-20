@@ -140,3 +140,6 @@ let getTheSames = tuList.filter(x => miList.includes(x));othersP.push(getTheSame
 console.table(getTheSames);
 let getTheOthers = tuList.filter(x => !miList.includes(x));sameP.push(getTheOthers);  
 console.table(getTheOthers);
+
+
+
